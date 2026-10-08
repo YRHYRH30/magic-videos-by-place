@@ -1,0 +1,24 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>סרטוני מג׳יק לפי מקום</title>
+<style>
+:root{--bg:#F6F2FB;--card:#fff;--fg:#2A1250;--mut:#6B5A8C;--gold:#F7C225;--line:#E3DBF2}
+@media(prefers-color-scheme:dark){:root{--bg:#1B0D3A;--card:#2A1558;--fg:#F4EEFF;--mut:#B7A6DA;--line:#432880;color-scheme:dark}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font-family:'Segoe UI',Arial,sans-serif;padding:36px 16px 56px}
+.w{max-width:1080px;margin:0 auto}h1{font-size:clamp(28px,5vw,40px);text-wrap:balance}
+.s{color:var(--mut);margin-top:8px;font-size:17px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px;margin-top:28px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:12px;min-width:0}
+video{width:100%;aspect-ratio:9/16;border-radius:10px;background:#000;display:block}
+h2{font-size:19px;padding-inline:4px;line-height:1.3}
+a{display:block;text-align:center;text-decoration:none;background:var(--gold);color:#2A1250;font-weight:700;padding:12px;border-radius:10px}
+</style></head><body><div class="w">
+<h1>סרטוני מג׳יק אנגלית לפי מקום</h1>
+<p class="s">ההרשמה לחוגים נסגרת בקרוב. בסיום כל סרטון: לוגו המקום וקוד QR להצטרפות.</p>
+<div class="g" id="g"></div></div>
+<script>
+[["רשת חוויות רחובות","rehovot"],["החברה לתרבות ופנאי נס ציונה","nes-ziona"],["מתנ״ס שיכוני המזרח","shikunei"],["מתנ״ס נאות שמיר","naot-shamir"],["מתנ״ס נאות שז״ר","naot-shazar"]].forEach(([n,f])=>{
+const c=document.createElement('div');c.className='c';
+c.innerHTML='<video controls preload="metadata" playsinline src="videos/'+f+'.mp4#t=0.1"></video><h2>'+n+'</h2><a href="videos/'+f+'.mp4" download="מגיק - '+n.replace(/״/g,'')+'.mp4">⬇ הורדה</a>';
+document.getElementById('g').appendChild(c)});
+</script></body></html>
